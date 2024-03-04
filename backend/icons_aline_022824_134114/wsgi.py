@@ -11,8 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault(
-    "DJANGO_SETTINGS_MODULE", "icons_aline_022824_134114.settings"
-)
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "icons_aline_022824_134114.settings")
 
 application = get_wsgi_application()
