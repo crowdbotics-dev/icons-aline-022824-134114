@@ -5,21 +5,46 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('shop', '0001_initial'),
+        ("shop", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Integration',
+            name="Integration",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('integration_type', models.CharField(choices=[['PAYMENT_GATEWAY', 'Payment Gateways'], ['SHIPPING_PROVIDER', 'Shipping Providers'], ['ANALYTICS_SERVICE', 'Analytics Services']], max_length=50)),
-                ('details', models.JSONField()),
-                ('shop', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='integration_shop', to='shop.shop')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "integration_type",
+                    models.CharField(
+                        choices=[
+                            ["PAYMENT_GATEWAY", "Payment Gateways"],
+                            ["SHIPPING_PROVIDER", "Shipping Providers"],
+                            ["ANALYTICS_SERVICE", "Analytics Services"],
+                        ],
+                        max_length=50,
+                    ),
+                ),
+                ("details", models.JSONField()),
+                (
+                    "shop",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="integration_shop",
+                        to="shop.shop",
+                    ),
+                ),
             ],
         ),
     ]

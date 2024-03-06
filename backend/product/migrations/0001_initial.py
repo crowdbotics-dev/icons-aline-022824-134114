@@ -5,24 +5,38 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('shop', '0001_initial'),
+        ("shop", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ProductListing',
+            name="ProductListing",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=255)),
-                ('description', models.TextField(null=True)),
-                ('price', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('categories', models.JSONField()),
-                ('tags', models.JSONField()),
-                ('shop', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='productlisting_shop', to='shop.shop')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=255)),
+                ("description", models.TextField(null=True)),
+                ("price", models.DecimalField(decimal_places=2, max_digits=10)),
+                ("categories", models.JSONField()),
+                ("tags", models.JSONField()),
+                (
+                    "shop",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="productlisting_shop",
+                        to="shop.shop",
+                    ),
+                ),
             ],
         ),
     ]

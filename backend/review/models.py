@@ -6,14 +6,14 @@ class Review(models.Model):
     "Generated Model"
     product = models.ForeignKey(
         "product.ProductListing",
-        on_delete=models.CASCADE,
         null=False,
+        on_delete=models.CASCADE,
         related_name="review_product",
     )
     user = models.ForeignKey(
         "authentication.User",
-        on_delete=models.CASCADE,
         null=False,
+        on_delete=models.CASCADE,
         related_name="review_user",
     )
     rating = models.IntegerField(

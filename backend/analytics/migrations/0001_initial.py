@@ -5,22 +5,36 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('shop', '0001_initial'),
+        ("shop", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ShopAnalytics',
+            name="ShopAnalytics",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('performance_metrics', models.JSONField()),
-                ('sales_reports', models.JSONField()),
-                ('customer_insights', models.JSONField()),
-                ('shop', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='shopanalytics_shop', to='shop.shop')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("performance_metrics", models.JSONField()),
+                ("sales_reports", models.JSONField()),
+                ("customer_insights", models.JSONField()),
+                (
+                    "shop",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="shopanalytics_shop",
+                        to="shop.shop",
+                    ),
+                ),
             ],
         ),
     ]

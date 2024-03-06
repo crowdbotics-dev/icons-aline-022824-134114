@@ -5,22 +5,46 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('authentication', '0001_initial'),
+        ("authentication", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Report',
+            name="Report",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('issue', models.TextField()),
-                ('escalation_status', models.CharField(choices=[['PENDING', 'Pending'], ['REVIEWING', 'Reviewing'], ['RESOLVED', 'Resolved']], max_length=50)),
-                ('date_reported', models.DateTimeField(auto_now_add=True)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='report_user', to='authentication.user')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("issue", models.TextField()),
+                (
+                    "escalation_status",
+                    models.CharField(
+                        choices=[
+                            ["PENDING", "Pending"],
+                            ["REVIEWING", "Reviewing"],
+                            ["RESOLVED", "Resolved"],
+                        ],
+                        max_length=50,
+                    ),
+                ),
+                ("date_reported", models.DateTimeField(auto_now_add=True)),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="report_user",
+                        to="authentication.user",
+                    ),
+                ),
             ],
         ),
     ]

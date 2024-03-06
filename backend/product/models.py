@@ -6,24 +6,22 @@ class ProductListing(models.Model):
     "Generated Model"
     shop = models.ForeignKey(
         "shop.Shop",
-        on_delete=models.CASCADE,
         null=False,
+        on_delete=models.CASCADE,
         related_name="productlisting_shop",
     )
     title = models.CharField(
-        max_length=255,
         null=False,
+        max_length=255,
     )
     description = models.TextField(
         null=True,
     )
     price = models.DecimalField(
+        null=False,
         max_digits=10,
         decimal_places=2,
-        null=False,
     )
-    categories = models.JSONField()
-    tags = models.JSONField()
 
 
 # Create your models here.

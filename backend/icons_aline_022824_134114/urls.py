@@ -40,6 +40,15 @@ urlpatterns = [
     path("api/v1/", include("report.api.v1.urls")),
     path("api/v1/", include("review.api.v1.urls")),
     path("api/v1/", include("shop.api.v1.urls")),
+    path("analytics/", include("analytics.urls")),
+    path("authentication/", include("authentication.urls")),
+    path("community/", include("community.urls")),
+    path("integration/", include("integration.urls")),
+    path("order/", include("order.urls")),
+    path("product/", include("product.urls")),
+    path("report/", include("report.urls")),
+    path("review/", include("review.urls")),
+    path("shop/", include("shop.urls")),
 ]
 
 admin.site.site_header = "Icons Aline 022824"

@@ -6,22 +6,19 @@ class Shop(models.Model):
     "Generated Model"
     owner = models.ForeignKey(
         "authentication.User",
-        on_delete=models.CASCADE,
         null=False,
+        on_delete=models.CASCADE,
         related_name="shop_owner",
     )
     name = models.CharField(
-        max_length=255,
-        unique=True,
         null=False,
+        unique=True,
+        max_length=255,
     )
     policies = models.TextField(
         null=True,
     )
     shipping_details = models.TextField(
-        null=True,
-    )
-    payment_methods = models.JSONField(
         null=True,
     )
 
